@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  linkify: ^4.0.0
+  linkify: ^4.1.0
 
 dev_dependencies:
   pedantic: ^1.11.0
