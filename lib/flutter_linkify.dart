@@ -137,6 +137,9 @@ class Linkify extends StatelessWidget {
 class SelectableLinkify extends StatelessWidget {
   /// Text to be linkified
   final String text;
+  
+  /// Label text
+  final String? label;
 
   /// The number of font pixels for each logical pixel
   final textScaleFactor;
@@ -157,6 +160,9 @@ class SelectableLinkify extends StatelessWidget {
 
   /// Style of link text
   final TextStyle? linkStyle;
+    
+  /// Style for label
+  final TextStyle? labelStyle;
 
   // Text.rich
 
@@ -332,7 +338,10 @@ TextSpan buildTextSpan(
   bool useMouseRegion = false,
 }) {
   return TextSpan(
-    children: elements.map<InlineSpan>(
+    children: [
+        if(label != null)
+        TextSpan(label, style: labelStyle),
+        elements.map<InlineSpan>(
       (element) {
         if (element is LinkableElement) {
           if (useMouseRegion) {
@@ -359,5 +368,6 @@ TextSpan buildTextSpan(
         }
       },
     ).toList(),
+    ]
   );
 }
