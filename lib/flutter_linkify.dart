@@ -336,12 +336,13 @@ TextSpan buildTextSpan(
   TextStyle? linkStyle,
   LinkCallback? onOpen,
   bool useMouseRegion = false,
+  String? label,
+  TextStyle? labelStyle  
 }) {
   return TextSpan(
-    children: [
-        if(label != null)
-        TextSpan(label, style: labelStyle),
-        elements.map<InlineSpan>(
+      text: label,
+      style: labelStyle,
+    children: elements.map<InlineSpan>(
       (element) {
         if (element is LinkableElement) {
           if (useMouseRegion) {
@@ -368,6 +369,5 @@ TextSpan buildTextSpan(
         }
       },
     ).toList(),
-    ]
   );
 }
