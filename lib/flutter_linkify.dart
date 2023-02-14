@@ -264,6 +264,8 @@ class SelectableLinkify extends StatelessWidget {
     this.cursorHeight,
     this.selectionControls,
     this.onSelectionChanged,
+      this.label,
+      this.labelStyle,
   }) : super(key: key);
 
   @override
