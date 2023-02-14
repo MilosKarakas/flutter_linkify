@@ -279,6 +279,8 @@ class SelectableLinkify extends StatelessWidget {
     return SelectableText.rich(
       buildTextSpan(
         elements,
+          label: label,
+          labelStyle: labelStyle,
         style: Theme.of(context).textTheme.bodyText2?.merge(style),
         onOpen: onOpen,
         linkStyle: Theme.of(context)
